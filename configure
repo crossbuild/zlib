@@ -20,7 +20,7 @@ date >> configure.log
 
 # set command prefix for cross-compilation
 if [ -n "${CHOST}" ]; then
-    uname="`echo "${CHOST}" | sed -e 's/^[^-]*-\([^-]*\)$/\1/' -e 's/^[^-]*-[^-]*-\([^-]*\)$/\1/' -e 's/^[^-]*-[^-]*-\([^-]*\)-.*$/\1/'`"
+    uname="`echo "${CHOST}" | sed -e 's/-linux-gnu[^-]*/-linux/' -e 's/^[^-]*-\([^-]*\)$/\1/' -e 's/^[^-]*-[^-]*-\([^-]*\)$/\1/' -e 's/^[^-]*-[^-]*-\([^-]*\)-.*$/\1/'`"
     CROSS_PREFIX="${CHOST}-"
 fi
 
